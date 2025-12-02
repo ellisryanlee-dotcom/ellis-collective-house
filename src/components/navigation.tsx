@@ -22,7 +22,7 @@ export function Navigation() {
           {links.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={link.href as string}
               className={cn(
                 "transition-colors duration-200 hover:text-accent",
                 "text-foreground/70"
