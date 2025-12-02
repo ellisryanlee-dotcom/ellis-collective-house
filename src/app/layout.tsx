@@ -1,27 +1,22 @@
-import React from "react";
-import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/footer";
-import { Navigation } from "@/components/navigation";
-import { inter, playfair } from "@/lib/fonts";
+import { Inter_Tight } from "next/font/google";
+import type { Metadata } from "next";
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"]
+});
 
 export const metadata: Metadata = {
   title: "Ellis Collective House",
-  description: "A creative sanctuary crafted for collaboration and modern living."
+  description: "Ellis Collective digital home",
 };
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="relative flex min-h-screen flex-col bg-background text-foreground antialiased">
-        <div className="gradient-ring" aria-hidden />
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="en">
+      <body className={interTight.className}>
+        {children}
       </body>
     </html>
   );
