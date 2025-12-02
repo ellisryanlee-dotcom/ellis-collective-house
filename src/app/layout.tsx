@@ -1,4 +1,4 @@
-import "./globals.css";
+iimport "./globals.css";
 import { Inter_Tight } from "next/font/google";
 import type { Metadata } from "next";
 
@@ -8,8 +8,8 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "110 Productions",
-  description: "110 Productions digital home",
+  title: "110 Production",
+  description: "110 Production digital home",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
