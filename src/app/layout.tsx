@@ -8,8 +8,8 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Ellis Collective House",
-  description: "Ellis Collective digital home",
+  title: "110 Productions",
+  description: "110 Productions digital home",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
