@@ -1,15 +1,15 @@
 import "./globals.css";
-import { Inter_Tight } from "next/font/google";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
-const interTight = Inter_Tight({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "110 Productions",
-  description: "110 Production digital home",
+  description: "110 Productions digital home",
 };
 
 export default function RootLayout({
@@ -19,9 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={interTight.className}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
