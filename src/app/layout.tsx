@@ -8,7 +8,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "110 Production",
+  title: "110 Productions",
   description: "110 Production digital home",
 };
 
