@@ -16,7 +16,7 @@ export function Navigation() {
           href="/"
           className="flex items-center gap-2 text-lg font-semibold tracking-[0.15em] text-accent"
         >
-          ELLIS COLLECTIVE HOUSE
+         110 PRODUCTIONS
         </Link>
         <nav className="hidden items-center gap-8 text-sm uppercase tracking-[0.2em] md:flex">
           {links.map((link) => (
