@@ -14,7 +14,34 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
+const columnVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.85, ease: "easeOut", delay: 0.15 * index }
+  })
+};
+
 export default function Home() {
+  const pillars = [
+    {
+      title: "Community",
+      description:
+        "Intimate gatherings, shared resources, and a space to belong with people who champion your vision."
+    },
+    {
+      title: "Creativity",
+      description:
+        "Studios for ideas to breathe, thoughtful curation, and programming that keeps the spark alive."
+    },
+    {
+      title: "Collaboration",
+      description:
+        "Cross-disciplinary partnerships that turn inspiration into impact, guided by trust and intention."
+    }
+  ];
+
   return (
     <main className="relative overflow-hidden bg-background">
       <div
@@ -57,6 +84,41 @@ export default function Home() {
           </Button>
         </motion.div>
       </motion.section>
+
+      <section className="relative z-10 mx-auto max-w-5xl px-6 pb-24">
+        <div className="mb-12 h-px bg-gradient-to-r from-transparent via-[#C8A45A]/60 to-transparent" aria-hidden />
+        <div className="grid gap-8 md:grid-cols-3">
+          {pillars.map((pillar, index) => (
+            <motion.div
+              key={pillar.title}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={columnVariants}
+              className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 px-6 py-10 backdrop-blur-sm transition-transform duration-500 hover:-translate-y-1"
+            >
+              {index > 0 && (
+                <span className="absolute left-0 top-6 h-16 w-px bg-[#C8A45A]/40 md:-left-4" aria-hidden />
+              )}
+              <div className="relative">
+                <span className="mb-4 inline-block text-[10px] tracking-[0.28em] text-[#C8A45A]/80">
+                  OUR HOUSE
+                </span>
+                <h2 className="font-display text-2xl uppercase tracking-[0.08em] text-foreground sm:text-3xl">
+                  {pillar.title}
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-foreground/80 sm:text-base">
+                  {pillar.description}
+                </p>
+              </div>
+              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-b from-[#C8A45A]/6 via-transparent to-transparent" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
