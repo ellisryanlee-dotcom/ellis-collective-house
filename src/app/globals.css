@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #050505;
+  color: #f3f1e6;
+  min-height: 100vh;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+.gradient-ring {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(199, 165, 88, 0.2), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(199, 165, 88, 0.14), transparent 30%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04), transparent 55%);
+  filter: blur(48px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(199, 165, 88, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.text-accent {
+  color: #c7a558;
+}
+
+.section-heading {
+  font-family: var(--font-playfair), serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
